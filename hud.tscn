@@ -5,8 +5,8 @@
 [node name="HUD" type="CanvasLayer"]
 
 [node name="menu_background" type="TextureRect" parent="."]
-offset_left = 12.0
-offset_top = 5.0
-offset_right = 1872.0
-offset_bottom = 1123.0
+offset_left = 448.0
+offset_top = 249.0
+offset_right = 2308.0
+offset_bottom = 1367.0
 texture = ExtResource("1_x0gwh")
