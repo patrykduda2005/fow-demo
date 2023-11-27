@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ivr0sjc8j32h"]
+[gd_scene load_steps=25 format=3 uid="uid://ivr0sjc8j32h"]
 
 [ext_resource type="Texture2D" uid="uid://de60dsb8x0dh5" path="res://background-tile.png" id="1_fjiuy"]
 [ext_resource type="Texture2D" uid="uid://dqh4d6xdpttcs" path="res://pillar.png" id="2_fb06i"]
@@ -41,12 +41,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_x5asj")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8dshs"]
-vertices = PackedVector2Array(559, 17, 840, 189, 2572, 1649, -1747, 1649, -833, 8, 2552, -1385, 840, 89, 812, -92, 809, -135, 614, -36, 707, -88, 349, -197, 342, -164, 39, -168, 78, -235, 202, -318, 261, -350, -1734, -1385, -839, -362, -791, -477, 393, -125, 392, -152, 566, -151, 574, -120, -757, -38, -757, -104, -88, -119, -496, -472, -141, -470, -130, -119, -500, -440, 693, -120, -787, -119, -793, -293, -753, -304, -759, -400, -655, -440, -679, -512, -90, -517, 612, -196, 266, -420, 708, -169, 225, -420, 163, -394, -8, -226, -4, -123)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 2, 1, 6), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(7, 6, 9, 10), PackedInt32Array(11, 12, 13, 14, 15, 16), PackedInt32Array(4, 3, 17, 18), PackedInt32Array(19, 18, 17), PackedInt32Array(20, 21, 22, 23), PackedInt32Array(20, 23, 9, 24, 25, 26), PackedInt32Array(27, 28, 29, 30), PackedInt32Array(31, 10, 9, 23), PackedInt32Array(25, 32, 33, 34, 29), PackedInt32Array(34, 35, 36, 30, 29), PackedInt32Array(37, 19, 17), PackedInt32Array(37, 17, 5, 38), PackedInt32Array(39, 11, 16, 40, 5), PackedInt32Array(5, 8, 41), PackedInt32Array(5, 41, 39), PackedInt32Array(38, 5, 40, 42), PackedInt32Array(38, 42, 43), PackedInt32Array(38, 43, 44), PackedInt32Array(26, 38, 44, 45), PackedInt32Array(26, 45, 20), PackedInt32Array(26, 25, 29)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-1747, 1649, -1734, -1385, 2552, -1385, 2572, 1649), PackedVector2Array(-791, -477, -679, -512, -90, -517, -88, -119, -130, -119, -141, -470, -496, -472, -500, -440, -655, -440, -759, -400, -753, -304, -793, -293, -787, -119, -757, -104, -757, -38, 614, -36, 840, 89, 840, 189, 559, 17, -833, 8, -839, -362), PackedVector2Array(163, -394, -8, -226, -4, -123, 393, -125, 392, -152, 566, -151, 574, -120, 693, -120, 707, -88, 812, -92, 809, -135, 708, -169, 612, -196, 349, -197, 342, -164, 39, -168, 78, -235, 202, -318, 261, -350, 266, -420, 225, -420)])
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_46pop"]
-size = Vector2(39, 12)
+vertices = PackedVector2Array(817, -137, 2552, -1385, 2572, 1649, 856, 90, 812, -92, 347, -224, 329, -186, 65, -179, 108, -226, 213, -302, 293, -341, 850, 225, 555, 25, -1747, 1649, -88.6595, 23.6325, -857, 22, -1734, -1385, -869, -361, -818, -480, 399, -104, 400, -139, 556, -140, 565, -108, 695, -69, 610, -57, 687, -108, -739, -56, -23, -99, -66, -97, -482, -446, -162, -443, -148, -97, -500, -412, -662, -418, -743, -119, -771, -127, -773, -271, -753, -304, -705, -540, -66, -549, 615, -218, 272, -462, 714, -184, 208, -439, 136, -411, -25, -234, -738, -374)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9, 10), PackedInt32Array(11, 3, 2), PackedInt32Array(12, 11, 2, 13, 14), PackedInt32Array(15, 14, 13), PackedInt32Array(15, 13, 16, 17), PackedInt32Array(18, 17, 16), PackedInt32Array(19, 20, 21, 22), PackedInt32Array(23, 4, 3), PackedInt32Array(23, 3, 24), PackedInt32Array(22, 25, 23, 24, 26, 19), PackedInt32Array(27, 19, 26, 28), PackedInt32Array(29, 30, 31, 32), PackedInt32Array(33, 32, 34, 35, 36, 37), PackedInt32Array(38, 18, 16), PackedInt32Array(38, 16, 1, 39), PackedInt32Array(40, 5, 10, 41, 1), PackedInt32Array(1, 0, 42), PackedInt32Array(1, 42, 40), PackedInt32Array(39, 1, 41, 43), PackedInt32Array(39, 43, 44), PackedInt32Array(39, 44, 45), PackedInt32Array(28, 39, 45, 27), PackedInt32Array(31, 28, 26), PackedInt32Array(32, 31, 26, 34), PackedInt32Array(33, 37, 46)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1747, 1649, -1734, -1385, 2552, -1385, 2572, 1649), PackedVector2Array(-818, -480, -705, -540, -66, -549, -66, -97, -148, -97, -162, -443, -482, -446, -500, -412, -662, -418, -738, -374, -753, -304, -773, -271, -771, -127, -743, -119, -739, -56, 610, -57, 856, 90, 850, 225, 555, 25, -88.6595, 23.6325, -857, 22, -869, -361), PackedVector2Array(136, -411, -25, -234, -23, -99, 399, -104, 400, -139, 556, -140, 565, -108, 687, -108, 695, -69, 812, -92, 817, -137, 714, -184, 615, -218, 347, -224, 329, -186, 65, -179, 108, -226, 213, -302, 293, -341, 272, -462, 208, -439)])
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6yud1"]
 atlas = ExtResource("4_qsatk")
@@ -163,7 +160,6 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="tilemap" type="TileMap" parent="."]
@@ -175,18 +171,11 @@ layer_0/tile_data = PackedInt32Array(-262148, 0, 0, -327684, 0, 0, -393220, 0, 0
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_8dshs")
 
-[node name="Enemy" type="CharacterBody2D" parent="."]
-position = Vector2(-41.1479, 389.483)
+[node name="Enemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("movement_target", "navigation_agent")]
+position = Vector2(1486, 98)
 script = ExtResource("3_wlpok")
-movement_speed = null
-movement_target = Object(CharacterBody2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(-285, 407),"rotation":0.0,"scale":Vector2(1, 1),"skew":0.0,"disable_mode":0,"collision_layer":1,"collision_mask":1,"collision_priority":1.0,"input_pickable":false,"motion_mode":0,"up_direction":Vector2(0, -1),"velocity":Vector2(0, 0),"slide_on_ceiling":true,"max_slides":4,"wall_min_slide_angle":0.261799,"floor_stop_on_slope":true,"floor_constant_speed":false,"floor_block_on_wall":true,"floor_max_angle":0.785398,"floor_snap_length":1.0,"platform_on_leave":0,"platform_floor_layers":4294967295,"platform_wall_layers":0,"safe_margin":0.08,"script":Resource("res://Player.gd"))
-
-navigation_agent = Object(NavigationAgent2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","target_position":Vector2(0, 0),"path_desired_distance":20.0,"target_desired_distance":10.0,"path_max_distance":100.0,"navigation_layers":1,"pathfinding_algorithm":0,"path_postprocessing":0,"path_metadata_flags":7,"avoidance_enabled":false,"velocity":Vector2(0, 0),"radius":10.0,"neighbor_distance":500.0,"max_neighbors":10,"time_horizon_agents":1.0,"time_horizon_obstacles":0.0,"max_speed":100.0,"avoidance_layers":1,"avoidance_mask":1,"avoidance_priority":1.0,"debug_enabled":false,"debug_use_custom":false,"debug_path_custom_color":Color(1, 1, 1, 1),"debug_path_custom_point_size":4.0,"debug_path_custom_line_width":-1.0,"script":null)
-
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-position = Vector2(-13.3521, 2.51749)
-shape = SubResource("RectangleShape2D_46pop")
+movement_target = NodePath("../CanvasLayer/Player")
+navigation_agent = NodePath("NavigationAgent2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
 sprite_frames = SubResource("SpriteFrames_h4pxt")
@@ -217,7 +206,7 @@ shape = SubResource("RectangleShape2D_b2cey")
 follow_viewport_enabled = true
 
 [node name="Player" parent="CanvasLayer" instance=ExtResource("3_81y1c")]
-position = Vector2(-285, 407)
+position = Vector2(-295, 414)
 
 [node name="HUD" parent="." instance=ExtResource("4_ni44a")]
 script = ExtResource("5_bb6y5")
