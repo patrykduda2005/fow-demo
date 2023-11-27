@@ -160,6 +160,7 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="tilemap" type="TileMap" parent="."]
@@ -197,7 +198,7 @@ shape = SubResource("CircleShape2D_epjoj")
 [node name="deduwa" type="Area2D" parent="Enemy"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/deduwa"]
-position = Vector2(-13.3521, 2.51749)
+position = Vector2(8.99995, 4)
 shape = SubResource("RectangleShape2D_b2cey")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Enemy"]

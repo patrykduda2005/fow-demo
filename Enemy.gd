@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 @export var movement_target: CharacterBody2D
 @export var navigation_agent: NavigationAgent2D
+var skok: bool = false
+var skokTarget: Vector2
 
 func _ready():
 	navigation_agent.path_desired_distance = 4.0
@@ -31,12 +33,23 @@ func _physics_process(delta):
 	new_velocity = new_velocity.normalized()
 	new_velocity = new_velocity * movement_speed
 	
+	
+			
 	velocity = new_velocity
+	if (global_position.distance_to(movement_target.position) < 600):
+		if (!skok):
+			skok = true
+			skokTarget = movement_target.position
+		doSkok(skokTarget)
+	
 	move_and_slide()
 	if (velocity.x<0): #to nie ma velocity = false
 		get_node("AnimatedSprite2D").flip_h = true
 	else:
 		get_node("AnimatedSprite2D").flip_h = false
+		
+func doSkok(to: Vector2):
+	velocity = global_position.direction_to(to) * 700
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
