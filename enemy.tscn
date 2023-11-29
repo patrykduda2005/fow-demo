@@ -1,0 +1,145 @@
+[gd_scene load_steps=15 format=3 uid="uid://bj3fkfjbc3la2"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_ngacu"]
+[ext_resource type="Texture2D" uid="uid://c4ei322ys1nvc" path="res://rat.png" id="2_0k5qv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgwl7"]
+size = Vector2(14, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yud1"]
+atlas = ExtResource("2_0k5qv")
+region = Rect2(0, 0, 78, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgnk3"]
+atlas = ExtResource("2_0k5qv")
+region = Rect2(78, 0, 78, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fq3d"]
+atlas = ExtResource("2_0k5qv")
+region = Rect2(156, 0, 78, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he5jj"]
+atlas = ExtResource("2_0k5qv")
+region = Rect2(234, 0, 78, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2ron"]
+atlas = ExtResource("2_0k5qv")
+region = Rect2(312, 0, 78, 78)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h4pxt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yud1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgnk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fq3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he5jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2ron")
+}],
+"loop": true,
+"name": &"run",
+"speed": 13.0
+}]
+
+[sub_resource type="Animation" id="Animation_tve5t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_6a04r"]
+resource_name = "run"
+length = 0.50001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ayyi6"]
+_data = {
+"RESET": SubResource("Animation_tve5t"),
+"run": SubResource("Animation_6a04r")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_epjoj"]
+radius = 103.044
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2cey"]
+size = Vector2(79.5, 21)
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("navigation_agent")]
+position = Vector2(1486, 98)
+script = ExtResource("1_ngacu")
+navigation_agent = NodePath("NavigationAgent2D")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(600, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jgwl7")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h4pxt")
+animation = &"run"
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "run"
+libraries = {
+"": SubResource("AnimationLibrary_ayyi6")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-12.8521, 1.51749)
+shape = SubResource("CircleShape2D_epjoj")
+
+[node name="deduwa" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deduwa"]
+shape = SubResource("RectangleShape2D_b2cey")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="deduwa" to="." method="_on_deduwa_body_entered"]
